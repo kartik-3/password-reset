@@ -1,5 +1,7 @@
 const checkString = (rand) => {
-  const response = fetch(`http://localhost:8000/email/${rand}`);
+  const response = fetch(
+    `ttps://password-reset-kartik.herokuapp.com/email/${rand}`
+  );
   return response;
 };
 
@@ -42,12 +44,15 @@ document.querySelector("#confirm-password").addEventListener("click", () => {
 });
 
 const updateUser = async (data) => {
-  const response = await fetch("http://localhost:8000/email", {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  const response = await fetch(
+    "ttps://password-reset-kartik.herokuapp.com/email",
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
   return response;
 };

@@ -4,13 +4,16 @@ function validateEmail(mail) {
 }
 
 const createUser = async (data) => {
-  const response = await fetch("http://localhost:8000/email", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  const response = await fetch(
+    "https://password-reset-kartik.herokuapp.com/email",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
   return response;
 };
 

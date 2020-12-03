@@ -4,13 +4,16 @@ function validateEmail(mail) {
 }
 
 const checkUser = async (mail) => {
-  const response = await fetch("http://localhost:8000/email", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email: mail }),
-  });
+  const response = await fetch(
+    "ttps://password-reset-kartik.herokuapp.com/email",
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: mail }),
+    }
+  );
   return response;
 };
 
@@ -20,17 +23,16 @@ document
     event.preventDefault();
     const email = document.querySelector("#email").value;
     if (validateEmail(email)) {
-      checkUser(email)
-        .then((response) => {
-          if (response.status != 404) {
-            swal({
-              text:
-                "A verification link has been sent to your mail id. Please click on that link.",
-            });
-          } else {
-            swal({ text: "User does not exist." });
-          }
-        });
+      checkUser(email).then((response) => {
+        if (response.status != 404) {
+          swal({
+            text:
+              "A verification link has been sent to your mail id. Please click on that link.",
+          });
+        } else {
+          swal({ text: "User does not exist." });
+        }
+      });
     } else {
       $("#email").popover("show");
 
