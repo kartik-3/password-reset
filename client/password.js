@@ -5,7 +5,7 @@ function validateEmail(mail) {
 
 const checkUser = async (mail) => {
   const response = await fetch(
-    "ttps://password-reset-kartik.herokuapp.com/email",
+    "https://password-reset-kartik.herokuapp.com/email",
     {
       method: "PUT",
       headers: {
