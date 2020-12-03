@@ -1,0 +1,23 @@
+#email {
+  width: 100% !important;
+}
+
+#reset-password-btn,
+#sign-up-btn {
+  width: 45%;
+  margin-top: 15px !important;
+}
+
+#reset-password-btn {
+  margin-left: 7%;
+}
+
+label {
+  margin-top: 20%;
+}
+
+.center-element {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
