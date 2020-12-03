@@ -36,72 +36,17 @@ document
     if (pw1 !== pw2) {
       swal({ text: "Passwords don't match!" });
     } else {
-      //send post request
       const data = {
         email: email,
         password: pw1,
       };
 
       createUser(data).then((response) => {
-        console.log(response.status);
         if (response.status != 200) {
-          swal({ text: "Some error occurred. Please try again later." });
+          swal({ text: "User already exists." });
         } else {
           swal({ text: "Signed up successfully!" });
         }
       });
     }
   });
-
-// const checkUser = async (mail) => {
-//   console.log(mail);
-//   const response = await fetch("http://localhost:8000/email", {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ email: mail }),
-//   });
-//   return response.text();
-// };
-
-// document
-//   .querySelector("#reset-password-btn")
-//   .addEventListener("click", (event) => {
-//     const email = document.querySelector("#email").value;
-//     if (validateEmail(email)) {
-//       fetch(checkUser(email)).then((response) => {
-//         if (response.status != 404) {
-//           event.preventDefault();
-//         }
-//         //console.log(response);
-//         //event.preventDefault();
-//       });
-//       // if (!200) {
-//       // swal({ text: "User does not exist." });
-
-//       //  }
-//     } else {
-//       $("#email").popover("show");
-
-//       setTimeout(function () {
-//         $("#email").popover("hide");
-//       }, 5000);
-//     }
-//     // }
-//   });
-
-// document
-//   .querySelector("#save-change-password")
-//   .addEventListener("click", () => {
-//     const pw1 = document.querySelector("#change-password").value;
-//     const pw2 = document.querySelector("#change-confirm-password").value;
-//     console.log(pw1);
-//     console.log(pw2);
-
-//     if (pw1 === pw2) {
-//       console.log("password matches");
-//     } else {
-//       swal({ text: "Passwords don't match!" });
-//     }
-//   });

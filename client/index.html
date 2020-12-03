@@ -14,12 +14,13 @@
   </head>
   <body>
     <div class="container">
+      <h1 id="title-1" class="center-element">Sign Up</h1>
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
+        <div class="col"></div>
+        <div class="col">
           <form method="post">
             <div class="form-group">
-              <label for="email" class="center-element mt-5"
+              <label for="email" class="center-element mt-5 color-white"
                 >Enter your email ID
                 <input
                   class="form-control"
@@ -37,18 +38,16 @@
                 >You need to sign up before resetting the password.</small
               >
             </div>
-            <div class="input-group center-element">
-              <button type="button" id="sign-up-btn" class="btn btn-warning">
-                Sign up
-              </button>
-              <a
-                id="reset-password-btn"
-                class="btn btn-danger"
-                href="http://localhost:5500/client/changePassword.html"
-              >
-                Change password</a
-              >
-            </div>
+            <button type="button" id="sign-up-btn" class="btn btn-warning mt-3">
+              Sign up
+            </button>
+            <a
+              id="reset-password-btn"
+              class="btn btn-danger mt-3"
+              href="http://localhost:5500/client/password.html"
+            >
+              Change password</a
+            >
             <div
               class="modal fade"
               id="sign-up-modal"
@@ -77,7 +76,7 @@
                         <span class="input-group-text">Enter password</span>
                       </div>
                       <input
-                        type="text"
+                        type="password"
                         id="create-password"
                         aria-label="enter-password"
                         class="form-control"
@@ -88,7 +87,7 @@
                         <span class="input-group-text">Confirm password</span>
                       </div>
                       <input
-                        type="text"
+                        type="password"
                         id="create-confirm-password"
                         aria-label="confirm-password"
                         class="form-control"
@@ -110,7 +109,7 @@
             </div>
           </form>
         </div>
-        <div class="col-4"></div>
+        <div class="col"></div>
       </div>
     </div>
     <script
